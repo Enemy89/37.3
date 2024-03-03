@@ -32,7 +32,7 @@ private slots:
 private:
     Ui::Console *ui;
     TV *tvWindow;
-    QPushButton *pushButton; // Добавленная переменная pushButton
+    QPushButton *pushButton;
     int currentSoundLevel;
     int lastChannelIndex=-1;
 };
