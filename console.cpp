@@ -6,6 +6,7 @@
 #include<QString>
 #include <QLabel>
 #include <QStringList>
+#include <QFileInfo>
 
 int currentChannelIndex=-1;
 
@@ -159,7 +160,10 @@ void Console::startAnimation(const QString &buttonName) {
     } else {
         qDebug() << "Не удалось найти QLabel tmp_channel на форме TV";
     }
-    QString gifFilePath = QString("C:\\Users\\Rhan\\Documents\\untitled4\\channel\\%1.gif").arg(lastChannelIndex);
+    QString currentFilePath = __FILE__;
+    QFileInfo currentFileInfo(currentFilePath);
+    QString basePath = currentFileInfo.absolutePath() + "/channel/";
+    QString gifFilePath = basePath + QString::number(lastChannelIndex) + ".gif";
     qDebug() << "gifFilePath:" << gifFilePath;
     QMovie *movie = new QMovie(gifFilePath);
     QLabel *tvScreen = tvWindow->findChild<QLabel*>("tvScreen");

@@ -17,6 +17,9 @@ set(PROJECT_SOURCES
         console.cpp
         console.h
         console.ui
+        tv.cpp
+        tv.h
+        tv.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
